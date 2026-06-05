@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Search } from './components/Search';
@@ -39,7 +39,12 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/learn" element={<Learn />} />
+            <Route path="/learn/:pageSlug" element={<Learn />} />
+            // redirect of learn/getting-started
+            <Route
+              path="/learn"
+              element={<Navigate to="/learn/getting-started" replace />}
+            />
             <Route path="/tools" element={<Tools />} />
             <Route path="/community" element={<Community />} />
           </Routes>
