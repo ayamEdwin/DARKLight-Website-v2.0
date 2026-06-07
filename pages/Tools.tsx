@@ -84,7 +84,7 @@ export const Tools: React.FC = () => {
             </div>
             <div>
               <h2 className="text-2xl font-bold text-white">
-                Third-Party Tools
+                Downloads
               </h2>
               <p className="text-gray-400 text-sm">
                 Essential software packages required for the DARKLight SDK

@@ -40,10 +40,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/learn/:pageSlug" element={<Learn />} />
-            // redirect of learn/getting-started
+            {/* redirect of learn/getting-started */}
             <Route
               path="/learn"
-              element={<Navigate to="/learn/getting-started" replace />}
+              element={<Navigate to="/learn/installation-setup" replace />}
             />
             <Route path="/tools" element={<Tools />} />
             <Route path="/community" element={<Community />} />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { DocSection } from './types';
 import { CodeBlock } from './components/CodeBlock';
+import { Link } from 'react-router-dom';
 
 // Animation styles
 const pointerAnimationStyle = `
@@ -21,7 +22,80 @@ const UL = ({ children }: { children?: React.ReactNode }) => <ul className="list
 const OL = ({ children }: { children?: React.ReactNode }) => <ol className="list-decimal pl-6 mb-4 text-gray-300 space-y-2" style={{listStyleType: 'decimal'}}>{children}</ol>;
 
 export const DOC_DATA: DocSection[] = [
-  {
+   {
+    id: 'setup',
+    title: 'Setting up the Development Environment',
+    category: 'Getting Started',
+    keywords: ['voltage', 'logic', '3.3v', 'terminology', 'setup', 'darklight.h'],
+    content: (
+      <>
+        <H2>Installation</H2>
+        <P>
+           <H3>Setting Up the Darklight Development Environment</H3>
+           The Darklight development environment is built on a collection of powerful professional software tools that provide everything needed to develop, debug, and deploy applications for the Darklight microcontrollers.
+           To get started, you need to install the following software components on your development computer:
+           <H3>Required Software</H3>
+           <UL>
+                <li>
+                   <strong>Segger Embedded Studio</strong> – Integrated Development Environment (IDE) for writing and building applications.
+                   {/*<img src="https://testech-elect.com/wp-content/uploads/2025/07/embedded-studio-monitor.png" alt="Embedded Studio Interface" style={{maxWidth: '400px', height: 'auto', margin: '20px 0', borderRadius: '12px'}} />*/}
+                </li>
+                <li>
+                  <strong>SEGGER J-Link Software and Drivers (64-bit Windows)</strong> – Provides programming and debugging support for Darklight development boards.
+                  {/*<img src="https://www.segger.com/fileadmin/_processed_/b/6/csm_J-Link-Windows-ARM_final_1c70d122d1.webp" alt="Embedded Studio Interface" style={{maxWidth: '400px', height: 'auto', margin: '20px 0', borderRadius: '12px'}} />*/}
+                </li>
+                <li>
+                  <strong>Darklight USB Drivers</strong> – Enables communication between your computer and Darklight hardware.
+                  {/*<img src="https://community.nxp.com/t5/image/serverpage/image-id/246010i02A8BA9A7F33D296/image-size/medium?v=v2&px=400" alt="Embedded Studio Interface" style={{maxWidth: '400px', height: 'auto', margin: '20px 0', borderRadius: '12px'}} />*/}
+                </li>
+                <li>
+                  <strong>Darklight CPU Support Packages</strong> – Contains device definitions, startup files, libraries, and development resources for supported Darklight microcontrollers.
+                  {/*<img src="https://kb.segger.com/images/b/b6/ES_ImportProject_TargetSelection.jpg" alt="Embedded Studio Interface" style={{maxWidth: '400px', height: 'auto', margin: '20px 0', borderRadius: '12px'}} />*/}
+                  <br />
+                </li>
+              </UL>           
+        </P>
+        <P>
+            {/*<div className="bg-blue-900/20 border border-blue-700/30 rounded-xl p-4 my-6">*/}
+              <h3 className="text-white font-semibold mb-2">
+                Downloads
+              </h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Visit the DarkLight Downloads Page to download the required installation packages.
+              </p>
+              <Link
+                to="/tools"
+                className="text-brand-400 hover:text-brand-300 underline"
+              >
+                Go to Downloads Page
+              </Link>
+            {/*</div>*/}  
+        </P>
+        <div className="bg-blue-900/20 p-4 border-l-4 border-blue-500 mb-6">
+                <h4 className="font-bold text-blue-400">Info</h4>
+                  <p className="text-sm text-gray-300">
+                   Watch the short video below for a step-by-step guide to installing and configuring the Darklight development environment.
+                  </p>
+        </div>
+
+        <P>
+          <div style={{margin: '20px 0', display: 'flex', justifyContent: 'center'}}>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/fPyBSoZq-HU" // will be replaced with actual video link
+            title="Digital Output Tutorial"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+        </P>  
+   
+      </>
+    )
+  },
+   {
     id: 'intro',
     title: 'Introduction & Terminology',
     category: 'Getting Started',
@@ -73,85 +147,6 @@ export const DOC_DATA: DocSection[] = [
             </tbody>
           </table>
         </div>
-      </>
-    )
-  },
-   {
-    id: 'setup',
-    title: 'Installation & Setup',
-    category: 'Getting Started',
-    keywords: ['voltage', 'logic', '3.3v', 'terminology', 'setup', 'darklight.h'],
-    content: (
-      <>
-        <H2>Installation</H2>
-        <P>
-           The DarkLight Software Development Kit (SDK) relies on an ecosystem of third-party tools that work together to enable firmware development, debugging, and deployment on supported microcontrollers.
-
-           The required tools are:
-           <UL>
-                <li>
-                  <img src="https://testech-elect.com/wp-content/uploads/2025/07/embedded-studio-monitor.png" alt="Embedded Studio Interface" style={{maxWidth: '400px', height: 'auto', margin: '20px 0', borderRadius: '12px'}} />
-                  <strong>Segger Embedded Studio (SES)</strong> – An integrated development environment (IDE) used to write, build, and manage embedded software projects. It provides the tools needed to develop and compile firmware for DarkLight-supported devices.
-                </li>
-                <li>
-                  <img src="https://www.segger.com/fileadmin/_processed_/b/6/csm_J-Link-Windows-ARM_final_1c70d122d1.webp" alt="Embedded Studio Interface" style={{maxWidth: '400px', height: 'auto', margin: '20px 0', borderRadius: '12px'}} />
-                  <strong>J-Link Software and Documentation Pack (64-bit Windows)</strong> – Provides the drivers and utilities required to communicate with the target microcontroller through a SEGGER J-Link debugger. It enables firmware flashing, debugging, and real-time device communication.
-                </li>
-                <li>
-                  <img src="https://community.nxp.com/t5/image/serverpage/image-id/246010i02A8BA9A7F33D296/image-size/medium?v=v2&px=400" alt="Embedded Studio Interface" style={{maxWidth: '400px', height: 'auto', margin: '20px 0', borderRadius: '12px'}} />
-                  <strong>USB Drivers</strong> – Allow your computer to correctly recognize and communicate with the J-Link debugger and connected hardware. Without the appropriate drivers, the development tools may be unable to detect the target device.
-                </li>
-                <li>
-                  <img src="https://kb.segger.com/images/b/b6/ES_ImportProject_TargetSelection.jpg" alt="Embedded Studio Interface" style={{maxWidth: '400px', height: 'auto', margin: '20px 0', borderRadius: '12px'}} />
-                  <strong>Embedded Studio CPU Support Packages</strong> – Add support for specific microcontroller families within Segger Embedded Studio. These packages include device definitions, startup files, and configuration settings required to build and debug applications for supported processors.
-                  <br />
-                  <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" 
-                   className="text-brand-400 hover:text-brand-300 underline"> Download the latest version of third-party tools here</a>
-                </li>
-              </UL>           
-        </P>
-        <P>
-            <div className="bg-blue-900/20 border border-blue-700/30 rounded-xl p-4 my-6">
-              <h3 className="text-white font-semibold mb-2">
-                Required Software Downloads
-              </h3>
-
-              <p className="text-gray-300 text-sm mb-3">
-                Before following this tutorial, install all required third-party tools,
-                including SEGGER Embedded Studio, J-Link Software, USB Drivers, and CPU
-                Support Packages.
-              </p>
-
-              <a
-  href="#/tools#third-party-tools"
-  className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-white text-sm"
->
-  View Downloads
-</a>
-            </div>
-        </P>
-        <div className="bg-blue-900/20 p-4 border-l-4 border-blue-500 mb-6">
-                <h4 className="font-bold text-blue-400">Note</h4>
-                  <p className="text-sm text-gray-300">
-                    A tutorial video demonstrating how to install and configure these tools is provided below. Before watching the video, ensure that you have downloaded all the required software to your computer using the links provided above. Installing these components correctly is essential for building,
-                    programming, and debugging applications with the DarkLight SDK.
-                  </p>
-        </div>
-
-        <P>
-          <div style={{margin: '20px 0', display: 'flex', justifyContent: 'center'}}>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/fPyBSoZq-HU" // will be replaced with actual video link
-            title="Digital Output Tutorial"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-        </P>  
-   
       </>
     )
   },
@@ -466,8 +461,17 @@ export const DOC_DATA: DocSection[] = [
             This type of output is a digital signal, making it ideal for direct connection to a microcontroller’s digital input pin. Using such inputs, a system can automatically 
             control lighting, air conditioning, alarms, or access control mechanisms.
             <br />
-            <a href="https://www.theengineeringprojects.com/2017/08/pir-sensor-arduino-interfacing.html" target="_blank" rel="noopener noreferrer" 
-               className="text-brand-400 hover:text-brand-300 underline"> Further reading on PIR sensor can be found here</a>
+            <p>
+            Further reading on PIR sensors can be found{' '}
+            <a
+              href="https://www.theengineeringprojects.com/2017/08/pir-sensor-arduino-interfacing.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-400 hover:text-brand-300 underline"
+            >
+              here
+            </a>
+          </p>
         </P>
 
         <P>

@@ -1,22 +1,22 @@
 export const LEARN_PAGES = [
     {
-      slug: 'getting-started',
+      slug: 'installation-setup',
       title: 'Getting Started',
-      docs: ['intro'],
-      next: 'installation-setup'
+      docs: ['setup'],
+      next: 'getting-started'
     },
   {
-    slug: 'installation-setup',
-    title: 'Installing Third-Party Tools',
-    docs: ['setup'],
-    previous: 'getting-started',
+    slug: 'getting-started',
+    title: 'Getting Started',
+    docs: ['intro'],
+    previous: 'installation-setup',
     next: 'digital-io'
   },
   {
     slug: 'digital-io',
     title: 'Hardware I/O',
     docs: ['digital-io'],
-    previous: 'installation-setup',
+    previous: 'getting-started',
     next: 'analog'
   },
   {

@@ -50,6 +50,18 @@ export const Learn: React.FC = () => {
             </h5>
 
             <ul className="space-y-1 border-l border-gray-800 ml-2">
+               <li>
+                <Link
+                  to="/learn/installation-setup"
+                  className={`block pl-4 py-1 text-sm border-l-2 transition-colors ${
+                    pageSlug === 'installation-setup'
+                      ? 'border-brand-500 text-brand-400'
+                      : 'border-transparent text-gray-400 hover:text-white hover:border-gray-600'
+                  }`}
+                >
+                  Installation & Setup
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/learn/getting-started"
@@ -60,18 +72,6 @@ export const Learn: React.FC = () => {
                   }`}
                 >
                   Introduction & Terminology
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/learn/installation-setup"
-                  className={`block pl-4 py-1 text-sm border-l-2 transition-colors ${
-                    pageSlug === 'installation-setup'
-                      ? 'border-brand-500 text-brand-400'
-                      : 'border-transparent text-gray-400 hover:text-white hover:border-gray-600'
-                  }`}
-                >
-                  Installation & Setup
                 </Link>
               </li>
             </ul>
