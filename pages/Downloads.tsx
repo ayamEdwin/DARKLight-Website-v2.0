@@ -36,9 +36,9 @@ export const Downloads: React.FC = () => {
               Resource
             </th>
 
-            <th className="px-5 py-3 text-left text-sm font-semibold text-white">
+            {/*<th className="px-5 py-3 text-left text-sm font-semibold text-white">
               Type
-            </th>
+            </th>*/}
 
             <th className="px-5 py-3 text-left text-sm font-semibold text-white">
               Description
