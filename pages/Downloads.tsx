@@ -130,7 +130,7 @@ export const Downloads: React.FC = () => {
       type: 'Library',
       description:
         'WS2812B addressable RGB LED driver library.',
-      actionText: 'View Repository',
+      actionText: 'Download ZIP',
       link: '#',
     },
     {
@@ -138,7 +138,7 @@ export const Downloads: React.FC = () => {
       type: 'Library',
       description:
         'APA102 LED strip driver library.',
-      actionText: 'View Repository',
+      actionText: 'Download ZIP',
       link: '#',
     },
   ];
@@ -307,7 +307,7 @@ export const Downloads: React.FC = () => {
       {/* Main Content */}
       <main className="flex-1 min-w-0">
         <div className="max-w-7xl">
-          <h1 className="text-4xl font-bold text-white mb-6">
+          <h1 className="text-3xl font-bold text-white mb-5">
             Downloads
           </h1>
 
@@ -323,7 +323,7 @@ export const Downloads: React.FC = () => {
           >
             <div className="flex items-center gap-3 mb-8">
               <Wrench className="text-brand-500" />
-              <h2 className="text-3xl font-bold text-white">
+              <h2 className="text-2xl font-bold text-white">
                 Software Tools
               </h2>
             </div>
@@ -337,7 +337,7 @@ export const Downloads: React.FC = () => {
           >
             <div className="flex items-center gap-3 mb-8">
               <Library className="text-brand-500" />
-              <h2 className="text-3xl font-bold text-white">
+              <h2 className="text-2xl font-bold text-white">
                 Libraries
               </h2>
             </div>
@@ -351,7 +351,7 @@ export const Downloads: React.FC = () => {
           >
             <div className="flex items-center gap-3 mb-8">
               <Cpu className="text-brand-500" />
-              <h2 className="text-3xl font-bold text-white">
+              <h2 className="text-2xl font-bold text-white">
                 DarkLight Uhuru Downloadables
               </h2>
             </div>
@@ -365,7 +365,7 @@ export const Downloads: React.FC = () => {
           >
             <div className="flex items-center gap-3 mb-8">
               <Cpu className="text-brand-500" />
-              <h2 className="text-3xl font-bold text-white">
+              <h2 className="text-2xl font-bold text-white">
                 DarkLight Katana Downloadables
               </h2>
             </div>
