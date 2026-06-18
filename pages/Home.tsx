@@ -100,7 +100,7 @@ export const Home: React.FC = () => {
             <Link to="/learn" className="w-full sm:w-auto px-8 py-3 bg-brand-600 hover:bg-brand-500 text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
               Start Learning <ArrowRight size={18} />
             </Link>
-            <Link to="/community" className="w-full sm:w-auto px-8 py-3 bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 rounded-lg font-semibold transition-all">
+            <Link to="/downloads" className="w-full sm:w-auto px-8 py-3 bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 rounded-lg font-semibold transition-all">
               Download Resources
             </Link>
           </div>

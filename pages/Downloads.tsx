@@ -84,7 +84,7 @@ export const Downloads: React.FC = () => {
       title: 'SEGGER Embedded Studio',
       type: 'IDE',
       description:
-        'Development environment used to build, flash and debug DarkLight applications.',
+        'Development environment used to build, and debug embedded system applications.',
       actionText: 'Visit SEGGER',
       link: 'https://www.segger.com/downloads/embedded-studio/',
     },
@@ -92,7 +92,7 @@ export const Downloads: React.FC = () => {
       title: 'J-Link Software Pack',
       type: 'Debugger',
       description:
-        'Required software package for J-Link flashing and debugging tools.',
+        'Software tool to program, debug and trace embedded microcontrollers.',
       actionText: 'Visit SEGGER',
       link: 'https://www.segger.com/downloads/jlink/',
     },
@@ -101,14 +101,6 @@ export const Downloads: React.FC = () => {
       type: 'Driver',
       description:
         'USB communication drivers required for supported DarkLight hardware.',
-      actionText: 'Download',
-      link: '#',
-    },
-    {
-      title: 'CPU Support Package',
-      type: 'SDK',
-      description:
-        'Device definitions, startup files and toolchain support packages.',
       actionText: 'Download',
       link: '#',
     },
@@ -125,7 +117,7 @@ export const Downloads: React.FC = () => {
     {
       title: 'lib_apa102',
       type: 'Library',
-      description: 'APA102 LED strip driver library.',
+      description: 'APA102 addressable RGB LED driver library.',
       actionText: 'Download ZIP',
       link: '#',
     },
@@ -135,7 +127,7 @@ export const Downloads: React.FC = () => {
     {
       title: 'CPU Support Package',
       type: 'SDK',
-      description: 'Official CPU support package for DarkLight Uhuru.',
+      description: 'Device definitions, startup files and toolchain support packages.',
       actionText: 'Download',
       link: '#',
     },
@@ -182,7 +174,7 @@ export const Downloads: React.FC = () => {
     {
       title: 'CPU Support Package',
       type: 'SDK',
-      description: 'Official CPU support package for DarkLight Katana.',
+      description: 'Device definitions, startup files and toolchain support packages.',
       actionText: 'Download',
       link: '#',
     },
