@@ -6,7 +6,8 @@ import {
   Share2, PenTool, Activity, MoveUpRight, Anchor, Minimize2, Battery,
   Quote, Grid, Wrench, ShieldCheck, Cpu as CpuIcon
 } from 'lucide-react';
-import { ImageCarousel } from '../components/ImageCarousel';
+import { ImageCarousel, BOARDS } from '../components/ImageCarousel';
+
 
 // Brand Data
 const BRANDS = [
@@ -31,6 +32,7 @@ export const Home: React.FC = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [isPinoutModalOpen, setIsPinoutModalOpen] = useState(false);
+  const [activeBoard, setActiveBoard] = useState(0);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -115,83 +117,22 @@ export const Home: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
              <div className="lg:w-1/2">
-                <h2 className="text-3xl font-bold text-white mb-4">Our Development Boards</h2>
+                <h2 className="text-3xl font-bold text-white mb-4">{BOARDS[activeBoard].title}</h2>
                 <p className="text-gray-400 mb-6 text-lg leading-relaxed">
-                  Uhuru is the entry board in the DarkLight's development board line-up, the DarkLight Core features isn't just powerful—it's built to last. Experience the next level of embedded hardware.
+                  {BOARDS[activeBoard].description}
                 </p>
                 <ul className="space-y-4 mb-8">
-                    <li className="flex items-start text-gray-300">
-                        <div className="w-5 h-5 bg-brand-500/20 border border-brand-500 rounded flex items-center justify-center mr-3 shrink-0 mt-0.5">
-                          <Check size={12} className="text-brand-400" />
-                        </div>
-                        <div>
-                          <p className="font-bold text-white">48MHz Arm Cortex M0 CPU</p>
-                        </div>
+                    {BOARDS[activeBoard].specs.map((spec, index) => (
+                    <li key={index} className="flex items-start text-gray-300">
+                      <div className="w-5 h-5 bg-brand-500/20 border border-brand-500 rounded flex items-center justify-center mr-3 shrink-0 mt-0.5">
+                        <Check size={12} className="text-brand-400" />
+                      </div>
+
+                      <div>
+                        <p className="font-bold text-white">{spec}</p>
+                      </div>
                     </li>
-                    <li className="flex items-start text-gray-300">
-                         <div className="w-5 h-5 bg-brand-500/20 border border-brand-500 rounded flex items-center justify-center mr-3 shrink-0 mt-0.5">
-                          <Check size={12} className="text-brand-400" />
-                        </div>
-                        <div>
-                          <p className="font-bold text-white">256 Kbytes Flash</p>
-                        </div>
-                    </li>
-                    <li className="flex items-start text-gray-300">
-                         <div className="w-5 h-5 bg-brand-500/20 border border-brand-500 rounded flex items-center justify-center mr-3 shrink-0 mt-0.5">
-                          <Check size={12} className="text-brand-400" />
-                        </div>
-                        <div>
-                          <p className="font-bold text-white">32 Kbytes SRAM</p>
-                        </div>
-                    </li>
-                    <li className="flex items-start text-gray-300">
-                         <div className="w-5 h-5 bg-brand-500/20 border border-brand-500 rounded flex items-center justify-center mr-3 shrink-0 mt-0.5">
-                          <Check size={12} className="text-brand-400" />
-                        </div>
-                        <div>
-                          <p className="font-bold text-white">48 Multiplexed I/O</p>
-                        </div>
-                    </li>
-                    <li className="flex items-start text-gray-300">
-                         <div className="w-5 h-5 bg-brand-500/20 border border-brand-500 rounded flex items-center justify-center mr-3 shrink-0 mt-0.5">
-                          <Check size={12} className="text-brand-400" />
-                        </div>
-                        <div>
-                          <p className="font-bold text-white">2 SPI, 2 UART, 2 I2C</p>
-                        </div>
-                    </li>
-                    <li className="flex items-start text-gray-300">
-                         <div className="w-5 h-5 bg-brand-500/20 border border-brand-500 rounded flex items-center justify-center mr-3 shrink-0 mt-0.5">
-                          <Check size={12} className="text-brand-400" />
-                        </div>
-                        <div>
-                          <p className="font-bold text-white">16 Channel ADC</p>
-                        </div>
-                    </li>
-                     <li className="flex items-start text-gray-300">
-                         <div className="w-5 h-5 bg-brand-500/20 border border-brand-500 rounded flex items-center justify-center mr-3 shrink-0 mt-0.5">
-                          <Check size={12} className="text-brand-400" />
-                        </div>
-                        <div>
-                          <p className="font-bold text-white">Advanced PWM Timer</p>
-                        </div>
-                    </li>
-                    <li className="flex items-start text-gray-300">
-                         <div className="w-5 h-5 bg-brand-500/20 border border-brand-500 rounded flex items-center justify-center mr-3 shrink-0 mt-0.5">
-                          <Check size={12} className="text-brand-400" />
-                        </div>
-                        <div>
-                          <p className="font-bold text-white">2 Independent Watchdog Timers</p>
-                        </div>
-                    </li>
-                    <li className="flex items-start text-gray-300">
-                         <div className="w-5 h-5 bg-brand-500/20 border border-brand-500 rounded flex items-center justify-center mr-3 shrink-0 mt-0.5">
-                          <Check size={12} className="text-brand-400" />
-                        </div>
-                        <div>
-                          <p className="font-bold text-white">DMA</p>
-                        </div>
-                    </li>
+                  ))}
                 </ul>
                 <button 
                   onClick={() => setIsPinoutModalOpen(true)}
@@ -203,7 +144,7 @@ export const Home: React.FC = () => {
              
              {/* Carousel Container */}
              <div className="lg:w-1/2 h-[400px] lg:h-[500px] w-full rounded-2xl overflow-hidden border border-gray-800 bg-gray-900 relative shadow-2xl">
-                 <ImageCarousel />
+                 <ImageCarousel onSlideChange={setActiveBoard} />
              </div>
           </div>
         </div>
